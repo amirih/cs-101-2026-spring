@@ -14,12 +14,12 @@ We keep `function ...` as the declaration so it clearly looks like **pseudocode,
 - The process stops at the **smallest case**
 
 ```python
-function idea(problem):
+function solve(problem):
     if problem is smallest:
         return answer
 
     do_one_step()
-    return idea(smaller_problem)
+    return solve(smaller_problem)
 ```
 
 ---
@@ -192,11 +192,11 @@ function finish(problem_size):
 - The final answer is built on the way back
 
 ```python
-function idea(problem):
+function solve(problem):
     if problem is smallest:
         return base_answer
 
-    return partial_answer + idea(smaller_problem)
+    return partial_answer + solve(smaller_problem)
 ```
 
 ---
@@ -360,12 +360,12 @@ function build(problem):
 - The final result is usually one decision or one found answer
 
 ```python
-function idea(problem):
+function solve(problem):
     if problem is smallest:
         return base_answer
 
     for each smaller_problem:
-        if idea(smaller_problem):
+        if solve(smaller_problem):
             return true
 
     return false
@@ -587,12 +587,12 @@ function search(problem):
 - Returned answers are combined into a larger result
 
 ```python
-function idea(problem):
+function solve(problem):
     if problem is smallest:
         return base_answer
 
-    left_answer = idea(left_part)
-    right_answer = idea(right_part)
+    left_answer = solve(left_part)
+    right_answer = solve(right_part)
 
     return combine(current_part, left_answer, right_answer)
 ```
