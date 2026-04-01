@@ -7,8 +7,12 @@ def function_with_default_args(a, b, c=3):
 def function_with_return(a, b, c):
     result = a + b + c
     return result
+    
+def function_without_args():
+    print("This function has no arguments.")
 
 if __name__ == '__main__':
+    function_without_args()
     function_with_args(1, 2, 3)
     function_with_args(4, 5, 6)
     function_with_args(7, 8, 9)
