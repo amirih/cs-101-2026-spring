@@ -743,9 +743,9 @@ function count_files(folder):
     if folder is empty:
         return 0
 
-    # recursive case
     total = files_in(folder)
 
+    # recursive case
     for each subfolder in folder:
         total = total + count_files(subfolder)
 
