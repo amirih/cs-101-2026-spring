@@ -34,10 +34,13 @@ function solve(problem):
 
 ```python
 function countdown(n):
+    # base case
     if n == 0:
         return "done"
 
     say(n)
+
+    # recursive case
     return countdown(n - 1)
 ```
 
@@ -51,10 +54,13 @@ function countdown(n):
 
 ```python
 function climb(stairs):
+    # base case
     if stairs == 0:
         return "at the top"
 
     take_one_step()
+
+    # recursive case
     return climb(stairs - 1)
 ```
 
@@ -69,6 +75,7 @@ function climb(stairs):
 
 ```python
 function read(words):
+    # base case
     if words == 0:
         return "finished"
 
@@ -76,6 +83,8 @@ function read(words):
     understand(this_word)
 
     words_left = words - 1
+
+    # recursive case
     return read(words_left)
 ```
 
@@ -89,10 +98,13 @@ function read(words):
 
 ```python
 function open_box(boxes):
+    # base case
     if boxes == 0:
         return "all boxes opened"
 
     open_one_box()
+
+    # recursive case
     return open_box(boxes - 1)
 ```
 
@@ -106,10 +118,13 @@ function open_box(boxes):
 
 ```python
 function walk(steps):
+    # base case
     if steps == 0:
         return "arrived"
 
     take_one_step()
+
+    # recursive case
     return walk(steps - 1)
 ```
 
@@ -123,10 +138,13 @@ function walk(steps):
 
 ```python
 function peel(stickers):
+    # base case
     if stickers == 0:
         return "all peeled"
 
     peel_one_sticker()
+
+    # recursive case
     return peel(stickers - 1)
 ```
 
@@ -140,10 +158,13 @@ function peel(stickers):
 
 ```python
 function empty_basket(items):
+    # base case
     if items == 0:
         return "empty"
 
     remove_one_item()
+
+    # recursive case
     return empty_basket(items - 1)
 ```
 
@@ -157,10 +178,13 @@ function empty_basket(items):
 
 ```python
 function erase(parts):
+    # base case
     if parts == 0:
         return "clean"
 
     erase_one_part()
+
+    # recursive case
     return erase(parts - 1)
 ```
 
@@ -174,10 +198,13 @@ function erase(parts):
 
 ```python
 function finish(problem_size):
+    # base case
     if problem_size == 0:
         return "done"
 
     do_one_small_step()
+
+    # recursive case
     return finish(problem_size - 1)
 ```
 
@@ -213,9 +240,11 @@ function solve(problem):
 
 ```python
 function sum(n):
+    # base case
     if n == 1:
         return 1
 
+    # recursive case
     return n + sum(n - 1)
 ```
 
@@ -229,9 +258,11 @@ function sum(n):
 
 ```python
 function factorial(n):
+    # base case
     if n == 1:
         return 1
 
+    # recursive case
     return n * factorial(n - 1)
 ```
 
@@ -245,9 +276,11 @@ function factorial(n):
 
 ```python
 function count_letters(word):
+    # base case
     if word is empty:
         return 0
 
+    # recursive case
     return 1 + count_letters(rest(word))
 ```
 
@@ -261,9 +294,11 @@ function count_letters(word):
 
 ```python
 function sum_list(items):
+    # base case
     if items is empty:
         return 0
 
+    # recursive case
     return first(items) + sum_list(rest(items))
 ```
 
@@ -277,9 +312,11 @@ function sum_list(items):
 
 ```python
 function reverse(word):
+    # base case
     if word is empty:
         return ""
 
+    # recursive case
     return reverse(rest(word)) + first(word)
 ```
 
@@ -293,9 +330,11 @@ function reverse(word):
 
 ```python
 function stars(n):
+    # base case
     if n == 0:
         return ""
 
+    # recursive case
     return "*" + stars(n - 1)
 ```
 
@@ -309,9 +348,11 @@ function stars(n):
 
 ```python
 function collect_countdown(n):
+    # base case
     if n == 0:
         return [0]
 
+    # recursive case
     return [n] + collect_countdown(n - 1)
 ```
 
@@ -325,12 +366,14 @@ function collect_countdown(n):
 
 ```python
 function binary(n):
+    # base case
     if n == 0:
         return "0"
-
+    # another base case (to avoid leading zeros)
     if n == 1:
         return "1"
 
+    # recursive case
     return binary(n // 2) + str(n % 2)
 ```
 
@@ -344,9 +387,11 @@ function binary(n):
 
 ```python
 function build(problem):
+    # base case
     if problem is smallest:
         return base_answer
 
+    # recursive case
     return keep_one_part(problem) + build(smaller(problem))
 ```
 
@@ -387,12 +432,14 @@ function solve(problem):
 
 ```python
 function find_file(folder, target):
+    # base case
     if folder is empty:
         return false
-
+    # another base case
     if target is in folder:
         return true
 
+    # recursive case
     for each subfolder in folder:
         if find_file(subfolder, target):
             return true
@@ -410,14 +457,17 @@ function find_file(folder, target):
 
 ```python
 function can_escape(cell):
+    # base case
     if cell is the exit:
         return true
 
+    # another base case
     if cell is blocked or already visited:
         return false
 
     mark cell as visited
 
+    # recursive case
     return can_escape(left) or can_escape(right) or can_escape(up) or can_escape(down)
 ```
 
@@ -431,12 +481,14 @@ function can_escape(cell):
 
 ```python
 function find_person(person, target):
+    # base case
     if person is empty:
         return false
-
+    # another base case
     if person == target:
         return true
 
+    # recursive case
     for each child in person.children:
         if find_person(child, target):
             return true
@@ -454,12 +506,14 @@ function find_person(person, target):
 
 ```python
 function find_menu_item(menu, target):
+    # base case
     if menu is empty:
         return false
-
+    # another base case
     if menu.name == target:
         return true
 
+    # recursive case
     for each submenu in menu.submenus:
         if find_menu_item(submenu, target):
             return true
@@ -477,14 +531,16 @@ function find_menu_item(menu, target):
 
 ```python
 function find_treasure(cave):
+    # base case
     if cave has treasure:
         return true
-
+    # another base case
     if cave is blocked or already visited:
         return false
 
     mark cave as visited
 
+    # recursive case
     for each next_cave in cave.connections:
         if find_treasure(next_cave):
             return true
@@ -502,12 +558,15 @@ function find_treasure(cave):
 
 ```python
 function find_employee(person, target):
+    # base case
     if person is empty:
         return false
 
+    # another base case
     if person == target:
         return true
 
+    # recursive case
     for each report in person.reports:
         if find_employee(report, target):
             return true
@@ -525,12 +584,15 @@ function find_employee(person, target):
 
 ```python
 function find_comment(comment, keyword):
+    # base case
     if comment is empty:
         return false
 
+    # another base case
     if keyword is in comment.text:
         return true
 
+    # recursive case
     for each reply in comment.replies:
         if find_comment(reply, keyword):
             return true
@@ -548,9 +610,11 @@ function find_comment(comment, keyword):
 
 ```python
 function solve(board):
+    # base case
     if board is complete:
         return true
 
+    # recursive case
     for each valid_choice:
         place(valid_choice)
         if solve(smaller_board):
@@ -570,9 +634,11 @@ function solve(board):
 
 ```python
 function search(problem):
+    # base case
     if problem is solved:
         return true
 
+    # recursive case
     for each smaller_problem:
         if search(smaller_problem):
             return true
@@ -616,9 +682,11 @@ function solve(problem):
 
 ```python
 function height(node):
+    # base case
     if node is empty:
         return 0
 
+    # recursive case
     return 1 + max(height(node.left), height(node.right))
 ```
 
@@ -632,9 +700,11 @@ function height(node):
 
 ```python
 function count_nodes(node):
+    # base case
     if node is empty:
         return 0
 
+    # recursive case
     return 1 + count_nodes(node.left) + count_nodes(node.right)
 ```
 
@@ -648,9 +718,11 @@ function count_nodes(node):
 
 ```python
 function find_max(node):
+    # base case
     if node is empty:
         return -infinity
 
+    # recursive case
     return max(node.value, find_max(node.left), find_max(node.right))
 ```
 
@@ -664,9 +736,11 @@ function find_max(node):
 
 ```python
 function count_files(folder):
+    # base case
     if folder is empty:
         return 0
 
+    # recursive case
     total = files_in(folder)
 
     for each subfolder in folder:
@@ -685,9 +759,11 @@ function count_files(folder):
 
 ```python
 function folder_size(folder):
+    # base case
     if folder is empty:
         return 0
 
+    # recursive case
     total = size_of_files_in(folder)
 
     for each subfolder in folder:
@@ -707,9 +783,11 @@ function folder_size(folder):
 
 ```python
 function evaluate(node):
+    # base case
     if node is a number:
         return node.value
 
+    # recursive cases
     left_value = evaluate(node.left)
     right_value = evaluate(node.right)
 
@@ -726,12 +804,14 @@ function evaluate(node):
 
 ```python
 function count_leaves(node):
+    # base case
     if node is empty:
         return 0
-
+    # another base case (a leaf node)
     if node.left is empty and node.right is empty:
         return 1
 
+    # recursive case
     return count_leaves(node.left) + count_leaves(node.right)
 ```
 
@@ -745,9 +825,11 @@ function count_leaves(node):
 
 ```python
 function tree_sum(node):
+    # base case
     if node is empty:
         return 0
 
+    # recursive case
     return node.value + tree_sum(node.left) + tree_sum(node.right)
 ```
 
@@ -761,9 +843,11 @@ function tree_sum(node):
 
 ```python
 function combine_all(problem):
+    # base case
     if problem is smallest:
         return base_answer
 
+    # recursive case
     answers = []
     for each smaller_problem:
         answers.append(combine_all(smaller_problem))
