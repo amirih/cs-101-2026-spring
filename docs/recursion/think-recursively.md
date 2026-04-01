@@ -766,9 +766,9 @@ function folder_size(folder):
     if folder is empty:
         return 0
 
-    # recursive case
     total = size_of_files_in(folder)
 
+    # recursive case
     for each subfolder in folder:
         total = total + folder_size(subfolder)
 
