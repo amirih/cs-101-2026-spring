@@ -15,9 +15,11 @@ We keep `function ...` as the declaration so it clearly looks like **pseudocode,
 
 ```python
 function solve(problem):
+    # base case
     if problem is smallest:
         return answer
 
+    # recursive case
     do_one_step()
     return solve(smaller_problem)
 ```
@@ -193,9 +195,11 @@ function finish(problem_size):
 
 ```python
 function solve(problem):
+    # base case
     if problem is smallest:
         return base_answer
 
+    # recursive case
     return partial_answer + solve(smaller_problem)
 ```
 
@@ -361,9 +365,11 @@ function build(problem):
 
 ```python
 function solve(problem):
+    # base case
     if problem is smallest:
         return base_answer
 
+    # recursive case
     for each smaller_problem:
         if solve(smaller_problem):
             return true
@@ -588,9 +594,11 @@ function search(problem):
 
 ```python
 function solve(problem):
+    # base case
     if problem is smallest:
         return base_answer
 
+    # recursive case
     left_answer = solve(left_part)
     right_answer = solve(right_part)
 
