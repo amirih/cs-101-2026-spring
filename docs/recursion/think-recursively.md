@@ -468,10 +468,10 @@ function can_escape(cell):
     mark cell as visited
 
     # recursive case
-    return can_escape(left)
-           or can_escape(right)
-           or can_escape(up)
-           or can_escape(down)
+    return can_escape(left) or
+           can_escape(right) or
+           can_escape(up) or
+           can_escape(down)
 ```
 
 ---
