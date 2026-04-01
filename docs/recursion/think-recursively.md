@@ -815,7 +815,8 @@ function count_leaves(node):
         return 1
 
     # recursive case
-    return count_leaves(node.left) + count_leaves(node.right)
+    return count_leaves(node.left) +
+           count_leaves(node.right)
 ```
 
 ---
