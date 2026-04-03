@@ -19,8 +19,9 @@ function solve(problem):
     if problem is smallest:
         return answer
 
-    # recursive case
     do_one_step()
+
+    # recursive case
     return solve(smaller_problem)
 ```
 
