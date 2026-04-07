@@ -53,9 +53,9 @@ def countdown(n):
     if n == 0:
         return "done"
 
+    # recursive case
     print(n)
 
-    # recursive case
     return countdown(n - 1)
 
 if __name__ == "__main__":
