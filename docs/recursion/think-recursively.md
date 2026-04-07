@@ -19,9 +19,9 @@ function solve(problem):
     if problem is smallest:
         return answer
 
+    # recursive case
     do_one_step()
 
-    # recursive case
     return solve(smaller_problem)
 ```
 
@@ -39,9 +39,9 @@ function countdown(n):
     if n == 0:
         return "done"
 
+    # recursive case
     say(n)
 
-    # recursive case
     return countdown(n - 1)
 ```
 
@@ -59,9 +59,9 @@ function climb(stairs):
     if stairs == 0:
         return "at the top"
 
+    # recursive case
     take_one_step()
 
-    # recursive case
     return climb(stairs - 1)
 ```
 
@@ -80,12 +80,13 @@ function read(words):
     if words == 0:
         return "finished"
 
+    # recursive case
     this_word = read_one_word(words)
     understand(this_word)
 
+    # reduce the problem size
     words_left = words - 1
 
-    # recursive case
     return read(words_left)
 ```
 
@@ -103,9 +104,9 @@ function open_box(boxes):
     if boxes == 0:
         return "all boxes opened"
 
+    # recursive case
     open_one_box()
 
-    # recursive case
     return open_box(boxes - 1)
 ```
 
@@ -123,9 +124,9 @@ function walk(steps):
     if steps == 0:
         return "arrived"
 
+    # recursive case
     take_one_step()
 
-    # recursive case
     return walk(steps - 1)
 ```
 
@@ -143,9 +144,9 @@ function peel(stickers):
     if stickers == 0:
         return "all peeled"
 
+    # recursive case
     peel_one_sticker()
 
-    # recursive case
     return peel(stickers - 1)
 ```
 
@@ -163,9 +164,9 @@ function empty_basket(items):
     if items == 0:
         return "empty"
 
+    # recursive case
     remove_one_item()
 
-    # recursive case
     return empty_basket(items - 1)
 ```
 
@@ -183,9 +184,9 @@ function erase(parts):
     if parts == 0:
         return "clean"
 
+    # recursive case
     erase_one_part()
 
-    # recursive case
     return erase(parts - 1)
 ```
 
@@ -203,9 +204,9 @@ function finish(problem_size):
     if problem_size == 0:
         return "done"
 
+    # recursive case
     do_one_small_step()
 
-    # recursive case
     return finish(problem_size - 1)
 ```
 
@@ -466,9 +467,9 @@ function can_escape(cell):
     if cell is blocked or already visited:
         return false
 
-    mark cell as visited
-
     # recursive case
+    mark_cell_as_visited()
+
     return can_escape(left) or
            can_escape(right) or
            can_escape(up) or
@@ -542,9 +543,9 @@ function find_treasure(cave):
     if cave is blocked or already visited:
         return false
 
-    mark cave as visited
-
     # recursive case
+    mark_cave_as_visited()
+
     for each next_cave in cave.connections:
         if find_treasure(next_cave):
             return true
@@ -744,9 +745,9 @@ function count_files(folder):
     if folder is empty:
         return 0
 
+    # recursive case
     total = files_in(folder)
 
-    # recursive case
     for each subfolder in folder:
         total = total + count_files(subfolder)
 
@@ -767,9 +768,9 @@ function folder_size(folder):
     if folder is empty:
         return 0
 
+    # recursive case
     total = size_of_files_in(folder)
 
-    # recursive case
     for each subfolder in folder:
         total = total + folder_size(subfolder)
 
