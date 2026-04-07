@@ -199,15 +199,15 @@ function erase(parts):
 - The goal is usually to **finish a process**
 
 ```python
-function finish(problem_size):
+function solve(problem):
     # base case
-    if problem_size == 0:
-        return "done"
+    if problem is smallest:
+        return base_answer
 
     # recursive case
     do_one_small_step()
-
-    return finish(problem_size - 1)
+    smaller_problem = smaller(problem)
+    return solve(smaller_problem)
 ```
 
 ---
@@ -388,13 +388,15 @@ function binary(n):
 - The full answer is built when calls return
 
 ```python
-function build(problem):
+function solve(problem):
     # base case
     if problem is smallest:
         return base_answer
 
     # recursive case
-    return keep_one_part(problem) + build(smaller(problem))
+    partial_answer = get_partial_answer(problem)
+    smaller_problem = smaller(problem)
+    return combine(partial_answer, solve(smaller_problem))
 ```
 
 ---
@@ -638,17 +640,15 @@ function solve(board):
 - Often used for **search** and **backtracking**
 
 ```python
-function search(problem):
+function solve(problem):
     # base case
-    if problem is solved:
-        return true
+    if problem is smallest:
+        return base_answer
 
     # recursive case
-    for each smaller_problem:
-        if search(smaller_problem):
-            return true
-
-    return false
+    smaller_problems = smaller(problem)
+    for smaller_problem in smaller_problems:
+        return solve(smaller_problem)
 ```
 
 ---
@@ -848,17 +848,18 @@ function tree_sum(node):
 - Great for **trees**, **folder structures**, and **divide-and-combine problems**
 
 ```python
-function combine_all(problem):
+function solve(problem):
     # base case
     if problem is smallest:
         return base_answer
 
     # recursive case
-    answers = []
-    for each smaller_problem:
-        answers.append(combine_all(smaller_problem))
+    smaller_problems = smaller(problem)
+    for smaller_problem in smaller_problems:
+        partial_answer = get_partial_answer(problem, smaller_problem)
+        return combine(final_answer, combine(partial_answer, solve(smaller_problem)))
 
-    return combine(current_part, answers)
+    return final_answer
 ```
 
 ## Recap
