@@ -1,8 +1,7 @@
 # Python-style pseudocode
-#function pseudocode(input):
-    #recap()
-    #return remembered()
-
+function pseudocode(input):
+    output = process(input)
+    return output
 
 def print_hello():
     print("Hello, world!")
