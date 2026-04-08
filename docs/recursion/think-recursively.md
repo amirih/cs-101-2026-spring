@@ -710,7 +710,8 @@ function count_nodes(node):
         return 0
 
     # recursive case
-    return 1 + count_nodes(node.left) + count_nodes(node.right)
+    return 1 + count_nodes(node.left)
+             + count_nodes(node.right)
 ```
 
 ---
