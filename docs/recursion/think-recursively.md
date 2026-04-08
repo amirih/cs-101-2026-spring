@@ -420,10 +420,8 @@ function solve(problem):
 
     # recursive case
     for each smaller_problem:
-        if solve(smaller_problem):
-            return true
+        solve(smaller_problem)
 
-    return false
 ```
 
 ---
