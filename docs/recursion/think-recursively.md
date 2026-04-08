@@ -57,7 +57,7 @@ function countdown(n):
 function climb(stairs):
     # base case
     if stairs == 0:
-        return "at the top"
+        return
 
     # recursive case
     take_one_step()
@@ -78,7 +78,7 @@ function climb(stairs):
 function read(words):
     # base case
     if words == 0:
-        return "finished"
+        return
 
     # recursive case
     this_word = read_one_word(words)
@@ -102,7 +102,7 @@ function read(words):
 function open_box(boxes):
     # base case
     if boxes == 0:
-        return "all boxes opened"
+        return
 
     # recursive case
     open_one_box()
@@ -122,7 +122,7 @@ function open_box(boxes):
 function walk(steps):
     # base case
     if steps == 0:
-        return "arrived"
+        return
 
     # recursive case
     take_one_step()
@@ -142,7 +142,7 @@ function walk(steps):
 function peel(stickers):
     # base case
     if stickers == 0:
-        return "all peeled"
+        return
 
     # recursive case
     peel_one_sticker()
@@ -162,7 +162,7 @@ function peel(stickers):
 function empty_basket(items):
     # base case
     if items == 0:
-        return "empty"
+        return
 
     # recursive case
     remove_one_item()
@@ -182,7 +182,7 @@ function empty_basket(items):
 function erase(parts):
     # base case
     if parts == 0:
-        return "clean"
+        return
 
     # recursive case
     erase_one_part()
@@ -202,7 +202,7 @@ function erase(parts):
 function solve(problem):
     # base case
     if problem is smallest:
-        return base_answer
+        return base_answer or just return
 
     # recursive case
     do_one_small_step()
@@ -868,3 +868,10 @@ function solve(problem):
 - **Type 2**: one smaller problem + keep part of the answer
 - **Type 3**: many smaller problems
 - **Type 4**: many smaller problems + combine returned answers
+
+OR:
+
+- **Type 1:** One recursive call, No partial answer
+- **Type 2:** One recursive call, With a partial answer
+- **Type 3:** Multiple recursive calls, No partial answer
+- **Type 4:** Multiple recursive calls, With partial answers
