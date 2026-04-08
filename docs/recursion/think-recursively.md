@@ -37,7 +37,7 @@ function solve(problem):
 function countdown(n):
     # base case
     if n == 0:
-        return "done"
+        return
 
     # recursive case
     say(n)

@@ -51,7 +51,7 @@ def power(base, exponent):
 def countdown(n):
     # base case
     if n == 0:
-        return "done"
+        return 
 
     # recursive case
     print(n)
@@ -60,12 +60,10 @@ def countdown(n):
 
 if __name__ == "__main__":
 
-    # countdown(5)
-    # print("------------------")
-    # print(countdown(5))
-    # print(f"Sum of first 5 natural numbers: {sum_to_n(5)}")
+    countdown(5)
+    print(f"Sum of first 5 natural numbers: {sum_to_n(5)}")
     print(f"Factorial of 4: {factorial(4)}")
-    # print(f"10th Fibonacci number: {fibonacci(10)}")
-    # print(f"2 raised to the power of 3: {power(2, 3)}")
-    # num_disks = 3
-    # hanoi(num_disks, 'A', 'C', 'B')
+    print(f"10th Fibonacci number: {fibonacci(10)}")
+    print(f"2 raised to the power of 3: {power(2, 3)}")
+    num_disks = 3
+    hanoi(num_disks, 'A', 'C', 'B')
