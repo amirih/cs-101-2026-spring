@@ -1,32 +1,31 @@
-def function_with_args(a, b, c):
+def with_parameters_no_return(a, b, c):
     print(f"a: {a}, b: {b}, c: {c}")
 
-def function_with_default_args(a, b, c=3):
+def with_parameters_with_return(a, b, c):
     print(f"a: {a}, b: {b}, c: {c}")
-
-def function_with_return(a, b, c):
-    result = a + b + c
-    return result
+    return a + b + c
     
-def function_without_args():
-    print("This function has no arguments.")
+def no_parameters_no_return():
+    print("This function has no parameters")
+    print("and it does not return anything.")
+
+def no_parameters_with_return():
+    print("This function has no parameters")
+    print("but it returns a message.")
+    return "Hello, World!"
+
+def with_default_parameters(a, b=10, c=20):
+    print(f"a: {a}, b: {b}, c: {c}")
+    return a + b + c
 
 if __name__ == '__main__':
-    function_without_args()
-    function_with_args(1, 2, 3)
-    function_with_args(4, 5, 6)
-    function_with_args(7, 8, 9)
-    print("---------------------------------")
+    with_parameters_no_return(1, 2, 3)
+    result = with_parameters_with_return(1, 2, 3)
+    print(f"Result: {result}")
+    
+    no_parameters_no_return()
+    message = no_parameters_with_return()
+    print(f"Message: {message}")
 
-    function_with_default_args(1, 2,8)
-    function_with_default_args(4, 5)
-    print("---------------------------------")
-
-    result = function_with_return(1, 2, 3)
-    print(f"result: {result}")
-    # you can just print the return value directly
-    print(f"result: {function_with_return(4, 5, 6)}")
-
-
-
-
+    result_default = with_default_parameters(1)
+    print(f"Result of with_default_parameters: {result_default}")
