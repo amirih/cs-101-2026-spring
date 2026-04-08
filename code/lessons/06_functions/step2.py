@@ -19,11 +19,14 @@ def with_default_parameters(a, b=10, c=20):
     return a + b + c
 
 if __name__ == '__main__':
+    
     with_parameters_no_return(1, 2, 3)
+    
     result = with_parameters_with_return(1, 2, 3)
     print(f"Result: {result}")
     
     no_parameters_no_return()
+    
     message = no_parameters_with_return()
     print(f"Message: {message}")
 
