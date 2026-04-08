@@ -690,7 +690,8 @@ function height(node):
         return 0
 
     # recursive case
-    return 1 + max(height(node.left), height(node.right))
+    return 1 + max(height(node.left),
+                   height(node.right))
 ```
 
 ---
