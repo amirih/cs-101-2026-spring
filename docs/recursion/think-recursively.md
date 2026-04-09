@@ -862,6 +862,21 @@ function tree_sum(node):
 - Each level contributes part of the answer
 - Great for **trees**, **folder structures**, and **divide-and-combine problems**
 
+
+```python
+function solve(problem):
+    # base case
+    if problem is smallest:
+        return base_answer
+
+    # recursive case
+    partail_answer1 = solve(smaller_problem1)
+    partail_answer2 = solve(smaller_problem2)
+    ...
+    
+    return combine(current_answer, partail_answer1, partail_answer2, ...)
+```
+
 ```python
 function solve(problem):
     # base case
