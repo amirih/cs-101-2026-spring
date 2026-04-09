@@ -426,6 +426,19 @@ function solve(problem):
 
 ```
 
+```python
+function solve(problem):
+    # base case
+    if problem is smallest:
+        return base_answer
+
+    # recursive case
+    for smaller_problem in smaller_problems:
+        solve(smaller_problem)
+    ...
+
+```
+
 ---
 
 **Think Recursively: How Do You Search for a File in Folders**
