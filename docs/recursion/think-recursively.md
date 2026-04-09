@@ -887,7 +887,7 @@ function solve(problem):
     smaller_problems = smaller(problem)
     for smaller_problem in smaller_problems:
         partial_answer = get_partial_answer(problem, smaller_problem)
-        return combine(final_answer, combine(partial_answer, solve(smaller_problem)))
+        return combine(final_answer, partial_answer, solve(smaller_problem))
 
     return final_answer
 ```
