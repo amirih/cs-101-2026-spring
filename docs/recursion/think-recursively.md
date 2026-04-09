@@ -868,13 +868,13 @@ function solve(problem):
     # base case
     if problem is smallest:
         return base_answer
-
-    # recursive case
-    partail_answer1 = solve(smaller_problem1)
-    partail_answer2 = solve(smaller_problem2)
-    ...
     
-    return combine(current_answer, partail_answer1, partail_answer2, ...)
+    # recursive case
+    partial_answer = get_partial_answer(problem)  
+    return combine(partial_answer,
+                   solve(smaller_problem1),
+                   solve(smaller_problem2),
+                   ...)
 ```
 
 ```python
