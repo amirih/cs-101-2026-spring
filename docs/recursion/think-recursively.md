@@ -419,8 +419,10 @@ function solve(problem):
         return base_answer
 
     # recursive case
-    for each smaller_problem:
-        solve(smaller_problem)
+    solve(smaller_problem1)
+    solve(smaller_problem2)
+    solve(smaller_problem3)
+    ...
 
 ```
 
