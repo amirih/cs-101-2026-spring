@@ -40,7 +40,7 @@ function countdown(n):
         return
 
     # recursive case
-    say(n)
+    print(n)
 
     return countdown(n - 1)
 ```
